@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Врачи</title>
+    <link rel="stylesheet" th:href="@{/style-all-doctors.css}">
+    <link rel="stylesheet" th:href="@{/reset-all-doctors.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- <div id="page__preloader" class="preloader">
+        <div class="loader">
+            <img class="logo__img" src="logo.svg" alt="logo" width="80">
+        </div>
+    </div> -->
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+
+                <a class="logo" th:href="'/bestApp/' + ${patient}">
+                    <img class="logo__img" th:src="@{/img/logo.svg}" alt="logo" width="40">
+                </a>
+                <nav class="nav__menu">
+
+                    <ul class="menu__list">
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" th:href="'/bestApp/' + ${patient}">ГЛАВНАЯ</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" th:href="'/doctors/' + ${patient} + '/all'">ВРАЧИ</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" th:href="'/medicalCenter/info/' + ${patient}">КОНТАКТЫ</a>
+                        </li>
+                    </ul>
+
+                </nav>
+
+                <div class="user-nav">
+                    <a class="user-nav__link" th:href="'/patient/' + ${patient}">ЛИЧНЫЙ КАБИНЕТ</a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="wrap">
+            <form th:action="'/doctors/' + ${patient} + '/all/byNameAndSurname'" class="search">
+               <input name="nameSurname" type="text" class="searchTerm" placeholder="Введите имя и фамилию доктора">
+               <button type="submit" class="searchButton">
+                 <i class="fa fa-search"></i>
+              </button>
+            </form>
+         </div>
+    </section>
+
+
+    <section>
+        <div th:each="doctor : ${doctors}" class='container--box'>
+            <div class='box--sub'>
+            <ul class='box__primary--item'>
+          
+            </ul>
+            
+            <ul class='box--items'>
+              <li class='item--list'>
+                <li th:text="|${doctor.getFirstName()} ${doctor.getLastName()} ${doctor.getMiddleName()}|" class='item--list title--heading'></li>
+                <li class='item--list title--date'>
+                  <span th:text="${doctor.getSpeciality()}"></span><br>
+                  <span th:text="${doctor.getDepartmentName()}"></span>
+                </li>
+              </li>
+          <!--   b -->
+              <li class='item--list item__list--mt'>
+                <li class='item--list item--title'>
+                  <p class='para--star'> * * * * * </p>
+                </li>
+                <li class='item--list title--para'>
+                  <p th:text="${doctor.getPhoneNum()}"></p>
+                  <p th:text="|Кабинет ${doctor.getOfficeNumber()}|"></p>
+                </li>
+              </li>
+            </ul>
+          </div>
+          <div class='box--footer'>
+            <a th:href="'/doctor/' + ${doctor.getId()} + '/' + ${patient} + '/timetables'" class='box__footer--link'>
+              <span>
+              Записаться на приём
+                <span style='float: right;'> 
+                  >
+                </span>
+              </span>
+              
+            </a>
+          </div>
+          </div>
+
+    </section>
+
+    <!-- <script src="home.js"></script> -->
+</body>

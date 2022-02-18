@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Контакты</title>
+    <link rel="stylesheet" th:href="@{/style-medcenter-info.css}">
+    <link rel="stylesheet" th:href="@{/reset-medcenter-info.css}">
+</head>
+
+<body>
+
+    <!-- <div id="page__preloader" class="preloader">
+        <div class="loader">
+            <img class="logo__img" src="logo.svg" alt="logo" width="80">
+        </div>
+    </div> -->
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+
+                <a class="logo" th:href="'/bestApp/' + ${patient}">
+                    <img class="logo__img" th:src="@{/img/logo.svg}" alt="logo" width="40">
+                </a>
+                <nav class="nav__menu">
+
+                    <ul class="menu__list">
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" th:href="'/bestApp/' + ${patient}">ГЛАВНАЯ</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" th:href="'/doctors/' + ${patient} + '/all'">ВРАЧИ</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" th:href="'/medicalCenter/info/' + ${patient}">КОНТАКТЫ</a>
+                        </li>
+                    </ul>
+
+                </nav>
+
+                <div class="user-nav">
+                    <a class="user-nav__link" th:href="'/patient/' + ${patient}">ЛИЧНЫЙ КАБИНЕТ</a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <section>
+
+
+                    <div class="user-profile">
+                      <img class="avatar" src="https://kharkov.info/sites/default/files/styles/original_vatermark/public/images/places/foto-medicinskiy-centr-medastrum-1.jpg?itok=MiTApA8l" alt="Ash" />
+                        
+                      <div th:text="${medicalCenter.getLabName()}" class="username">Экомед</div>
+                      <div th:text="${medicalCenter.getPhoneNum()}" class="bio"></div>
+                      <div th:text="${medicalCenter.getEMail()}" class="bio"></div>
+                      <div th:text="${medicalCenter.getAddress()}" class="description"></div>
+              
+                    </div>
+
+                </div>
+                </div>
+            </div>
+
+
+   
+
+
+    </section>
+
+    <!-- <script src="home.js"></script> -->
+</body>

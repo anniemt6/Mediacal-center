@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link th:href="@{/style-specialities.css}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    </head>
+
+    <body>
+
+
+        <div class="master-container">
+
+          <div class="menu container">
+
+            <div class="box-user">
+              <div class="avatar">
+              <img src="https://thecrucible.org/wp-content/uploads/default_bio_600x600-1.jpg" alt="Girl in a jacket" width="50" height="50">
+                </div>
+              <p class="user-info">
+              <span id="fullname" class="profil-text">
+                Админ
+              </span>
+                <br>
+              </p>
+            </div>
+
+            <div class="main-nav">
+              <a href="/admin/doctors/all"><span class="active-menu"><i class="fa fa-heartbeat"></i>Врачи</span></a>
+              <a href="/admin/departments/all"><span class="active-menu"><i class="fa fa-heartbeat"></i>Отделы</span></a>
+              <a href="/admin/specialities/all"><span class="active-menu"><i class="fa fa-heartbeat"></i>Специальности</span></a>
+              <a href="/admin/offices/all"><span class="active-menu"><i class="fa fa-heartbeat"></i>Кабинеты</span></a>
+              <a href="/admin/medicalCenter/info"><span class="active-menu"><i class="fa fa-heartbeat"></i>Медицинский центр</span></a>
+            </div>
+          </div>
+
+
+          <div class="main container">
+            <div class="content wo-table">
+              <div class="header-content master-container">
+
+                <div class="heading-wrap">
+                  <h2 class="heading-table">
+                    <i class="fa fa-stethoscope"></i>Специальности
+                  </h2>
+                </div>
+
+                <div class="button-wrap">
+                  <a href="/admin/specialities/add" id="link" class="new-input">
+                    <i class="fa fa-plus"></i>Добавить
+                  </a>
+                </div>
+              </div>
+
+
+        <div class="table card">
+
+        <table>
+
+          <tr>
+            <th>No<i class="fa fa-sort"></i></th>
+            <th>ID<i class="fa fa-sort"></i></th>
+            <th>Название<i class="fa fa-sort"></i></th>
+            <th></th>
+          </tr>
+
+          <tr th:each="speciality, iStat : ${specialities}">
+            <td th:text="${iStat.count}"></td>
+            <td th:text="${speciality.getId()}"></td>
+            <td th:text="${speciality.getSpeciality()}"></td>
+            <td><a th:href="'/admin/specialities/delete/' + ${speciality.getId()} + '/' + ${speciality.getSpeciality()}"><i class="fa fa-trash-o fa-fw"></i></a></td>
+          </tr>
+
+        </table>
+
+        </body>
+
+</html>

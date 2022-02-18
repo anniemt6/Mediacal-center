@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>home</title>
+    <link rel="stylesheet" th:href="@{/style-edit-patient.css}">
+    <link rel="stylesheet" th:href="@{/reset-edit-patient.css}">
+</head>
+
+<body>
+
+    <!-- <div id="page__preloader" class="preloader">
+        <div class="loader">
+            <img class="logo__img" src="logo.svg" alt="logo" width="80">
+        </div>
+    </div> -->
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+
+                <a class="logo" th:href="'/bestApp/' + ${patient}">
+                    <img class="logo__img" th:src="@{/img/logo.svg}" alt="logo" width="40">
+                </a>
+                <nav class="nav__menu">
+
+                    <ul class="menu__list">
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" th:href="'/bestApp/' + ${patient}">ГЛАВНАЯ</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" th:href="'/doctors/' + ${patient} + '/all'">ВРАЧИ</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" th:href="'/medicalCenter/info/' + ${patient}">КОНТАКТЫ</a>
+                        </li>
+                    </ul>
+
+                </nav>
+
+                <div class="user-nav">
+                    <a class="user-nav__link" href="/patient/logout">ВЫЙТИ ИЗ УЧЕТНОЙ ЗАПИСИ</a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+        <section>
+            <div class="login-page">
+                <div class="form">
+    
+                    <form method="POST" class="login-form">
+    
+                        <input name="firstName" type="text" placeholder="Имя" required/>
+                        <input name="lastName" type="text" placeholder="Фамилия" required/>
+                        <input name="middleName" type="text" placeholder="Отчество" required/>
+                        <input name="dateOfBirth" type="text" placeholder="Дата рождения" required/>
+                        <input name="patientEmail" type="email" placeholder="Электронный адрес" required/>
+                        <input name="patientPassword" type="password" placeholder="Пароль" required/>
+                        <input name="address" type="text" placeholder="Адрес проживания" required/>
+                        <input name="sex" type="text" placeholder="Пол (М/Ж)" required/>
+                        <input name="phoneNum" type="text" placeholder="Номер телефона" required/>
+                        <input name="medicalHistoryNum" type="text" placeholder="Номер мед. карты" required/>
+                        
+                        <button type="submit" class="edit_btn">РЕДАКТИРОВАТЬ</button>
+    
+                    </form>
+        
+        
+                </div>
+            </div>
+        </section>
+
+
+
+
+  
+
+</body>

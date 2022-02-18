@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link th:href="@{/error.css}" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="a-Error"> <span class="a-Error-icon"></span>
+            <h1 class="a-Error-title">Упс... Возникла ошибка!</h1>
+            <p class="text-center" th:text="${message}"/>
+            <p class="text-center">Повторите Ваши действия.</p>
+            <div class="a-Error-buttons"> 
+                <button onclick="javascript:window.history.go(-1)" class="a-Error-button" type="button">ОК</button> 
+            </div>
+        </div>
+    </body>
+
+</html>
+
+
+

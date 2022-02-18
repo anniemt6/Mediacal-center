@@ -1,0 +1,373 @@
+body {
+    margin: 0px !important;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #000 !important;
+  }
+  
+  p,
+  li,
+  table {
+    font-size: 14px;
+    line-height: 25px;
+  }
+  
+  .master-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  
+  /*grid menu main*/
+  .menu {
+    width: 15%;
+    flex: 0 0 15%;
+    background-color: white;
+    color: #79818e;
+    height: 100%;
+  }
+  
+  .main {
+    width: 85%;
+    flex: 0 0 85%;
+    background-color: #f1f5f7;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  /*grid title button table*/
+  
+  .heading-wrap {
+    width: 75%;
+    flex: 0 0 75%;
+  }
+  
+  .button-wrap {
+    width: 25%;
+    flex: 0 0 25%;
+  }
+  
+  .content {
+    margin: 0px 2rem 3rem;
+  }
+  
+  /*user box*/
+  .box-user {
+    margin-top: 25px;
+    border-bottom: 5px solid #4e62c0;
+  }
+  
+  .avatar img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+  }
+  
+  .user-info {
+    text-align: center;
+  }
+  
+  #fullname {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  
+  #jabatan {
+    font-size: 14px;
+  }
+  
+  /*menu main nav css*/
+  
+  .main-nav {
+    margin-top: 15px;
+    padding: 0 25px;
+    color: darkgray !important;
+  }
+  
+  .main-nav a,
+  .main-nav button {
+    color: #79818e;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    width: max-content;
+  }
+  
+  .main-nav a:hover,
+  .main-nav button:hover {
+    color: #4e62c0;
+  }
+  
+  .active-menu {
+    color: #4e62c0;
+  }
+  
+  .wo-child,
+  .po-child {
+    padding-left: 25px;
+  }
+  
+  .main-nav a,
+  .main-nav button {
+    display: block;
+    text-decoration: none;
+    padding: 12px;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  /*header tabel*/
+  .header-content {
+    background-color: white;
+    position: relative;
+    display: flex;
+    margin-top: 25px;
+  }
+  
+  h2.heading-table {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 25px;
+    border-radius: 5px 5px;
+    float: left;
+  }
+  
+  
+  
+  
+  #link a{
+      color:white;
+  }
+  
+  .new-input {
+      color: white;
+      top: 1.5rem;
+      right: 3rem;
+      position: absolute;
+      padding: 10px;
+      border-radius: 6px;
+   
+   
+      font-weight: bold;
+      
+  }
+  
+  .new-icon {
+    color: white;
+    margin-right: 10px;
+  }
+  
+  .fa {
+    margin-right: 10px;
+  }
+  
+  /*Table CSS*/
+  .wo-table {
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 0 0 15px -4px black;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th {
+    line-height: 19px;
+    color: #2e5266;
+    padding: 10px;
+    border-bottom: 5.5px solid lightgray;
+    text-align: left;
+  }
+  
+  .fa-sort {
+    margin-left: 5px;
+  }
+  
+  td {
+    border-bottom: 0.5px solid lightgray;
+  }
+  
+  td {
+    padding: 15px;
+    text-align: left;
+    line-height: 20px;
+  }
+  
+  tr:hover {
+    background-color: #f1f5f7;
+  }
+  
+  tr:nth-child(even) {
+    background-color: white;
+  }
+  
+  /*Status CSS*/
+  .status {
+    padding: 8px;
+    border-radius: 4px;
+  }
+  
+  .urgent {
+    background-color: black;
+    color: white;
+  }
+  
+  .major {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .medium {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  .minor {
+    background-color: #439ab3;
+    color: white;
+  }
+  
+  .solved {
+    background-color: #83b343;
+    color: white;
+  }
+  
+  .fa-pencil:hover {
+    color: #4e62c0;
+    cursor: pointer;
+  }
+  
+  .fa-trash:hover {
+    color: #4e62c0;
+    cursor: pointer;
+  }
+  
+  /*Pagination*/
+  .pagination {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    display: inline-flex;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 6px 14px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .pagination a.active {
+    background-color: #4e62c0;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+  }
+  
+  /*Item per page*/
+  .dropbtn {
+    background-color: #4e62c0;
+    color: white;
+    padding: 7px;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 9px;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    right: 0;
+    z-index: 1;
+    width: 75px;
+    text-align: center;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {
+    background-color: #ddd;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+
+  /* ------------------- */
+
+  .form { position: relative;
+    z-index: 1;
+    max-width: 360px; 
+    margin: 0 auto 100px; 
+    padding: 45px; 
+    text-align: center;
+
+  } 
+  .form input { 
+    outline: 0; 
+    background: #f2f2f2; 
+    width: 100%; 
+    border: 0; 
+    margin: 0 0 15px; 
+    padding: 15px; 
+    box-sizing: border-box; 
+    font-size: 14px; 
+  } 
+  .form button { 
+    text-transform: uppercase;
+    outline: 0; 
+    background: #4e62c0; 
+    width: 100%; 
+    border: 0; 
+    padding: 15px; 
+    color: #FFFFFF; 
+    font-size: 14px; 
+    -webkit-transition: all 0.3 ease; 
+    transition: all 0.3 ease; 
+    cursor: pointer; 
+    font-weight: 550;
+  } 
+  .form button:hover,.form button:active,.form button:focus { background:#757575;
+  } 
+  .form .message { 
+    margin: 15px 0 0; 
+    color: #757575; 
+    font-size: 12px; 
+  } 
+  .form .message a { 
+    color: #4e62c0; 
+    text-decoration: none; 
+  } 
+  .form .register-form { 
+    display: none; 
+  } 

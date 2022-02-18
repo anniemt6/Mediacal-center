@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link th:href="@{/style-signup-login.css}" rel="stylesheet">
+    </head>
+
+    <body>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+        <div class="login-page">
+            <div class="form">
+
+              <form action="/signup/patient" method="POST" class="register-form">
+                <input name="firstName" type="text" placeholder="Введите имя" required/>
+                <input name="lastName" type="text" placeholder="Введите фамилию" required/>
+                <input name="middleName" type="text" placeholder="Введите отчетсво" required/>
+                
+                <input name="patientPassword" type="password" placeholder="Введите пароль" required/>
+                <input name="patientEmail" type="email" placeholder="Введите почту" required/>
+                <input name="phoneNum" type="text" placeholder="Введите номер телефона" required/>
+
+                <input name="dateOfBirth" type="text" placeholder="Введите дату рождения" required/>
+                <input name="address" type="text" placeholder="Введите адрес" required/>
+                <input name="medicalHistoryNum" type="text" placeholder="Введите номер истории болезни" required/>
+                <input name="sex" type="text" maxlength="1" placeholder="Введите пол (М/Ж)" required/>
+                
+                <button>Зарегистрироваться</button>
+                <p class="message">Есть аккаунт? <a href="#">Войдите! </a></p>
+              </form>
+
+              <form method="POST" class="login-form">
+                <input name="email" type="email" placeholder="Введите почту" required/>
+                <input name="password" type="password" placeholder="Введите пароль" required/>
+                <button>Войти</button>
+                <p class="message">Нет учетной записи? <a href="#">Зарегистрируйся!</a></p>
+              </form>
+
+            </div>
+          </div>
+
+          <script type="text/javascript" th:src="@{/main-signup-login.js}"></script>
+
+    </body>
+
+</html>
+
+
+

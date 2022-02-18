@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link th:href="@{/style-doctor-account-patient-visit.css}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <body>
+            <div id="wrapper">
+             <h1><i class="fa fa-stethoscope"></i>Записанные пациенты</h1>
+             
+             <table id="keywords" cellspacing="0" cellpadding="0">
+               <thead>
+                 <tr>
+                   <th><span>Пациент<i class="fa fa-sort"></i></span></th>
+                   <th><span>Время приёма<i class="fa fa-sort"></i></span></th>
+                   <th></th>
+                   <th></th>
+                   <th><span>Посещение<i class="fa fa-sort"></i></span></th>
+                 </tr>
+               </thead>
+               <tbody>
+
+                 <tr th:each="request : ${requests}">
+                   <td th:text="${request.getPatientName()}"></td>
+                   <td th:text="${request.getVisitTime()}" class="lalign"></td>
+                   <td><a th:href="'/doctors/requests/present/' + ${request.getId()} + '/' + ${request.getPatientId()} + '/' + ${request.getTimetableId()} + '/' + ${request.getDoctorId()} + '/' + ${request.getVisitTime()}">Присутствовал</a><i class="fa fa-plus-circle"></i></td>
+                   <td><a th:href="'/doctors/requests/absent/' + ${request.getId()} + '/' + ${request.getPatientId()} + '/' + ${request.getTimetableId()} + '/' + ${request.getDoctorId()} + '/' + ${request.getVisitTime()}">Отсутствовал</a><i class="fa fa-minus-circle"></i></td>
+                   <td th:text="${request.getVisit()} ? 'Был' : 'Не был'"></td>
+                 </tr>
+                
+               </tbody>
+             </table>
+            </div> 
+           </body>
+    </body>
+
+</html>
+
+
+

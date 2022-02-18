@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" th:href="@{/style-home.css}">
+    <link rel="stylesheet" th:href="@{/reset-home.css}">
+    <style th:inline="text">
+        .main__content{
+            background-image: url([[@{/img/bg.png}]]);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="page__preloader" class="preloader">
+        <div class="loader">
+            <img class="logo__img" th:src="@{img/logo.svg}" alt="logo" width="80">
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+
+                <a class="logo" href="#">
+                    <img class="logo__img" th:src="@{img/logo.svg}" alt="logo" width="40">
+                </a>
+                <nav class="nav__menu">
+
+                    <ul class="menu__list">
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" href="#">ГЛАВНАЯ</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" th:href="'/doctors/' + ${patient} + '/all'">ВРАЧИ</a>
+                        </li>
+                        <li class="menu__list-item">
+                            <a class="menu__list-link" th:href="'/medicalCenter/info/' + ${patient}">КОНТАКТЫ</a>
+                        </li>
+                    </ul>
+
+                </nav>
+
+                <div class="user-nav">
+                    <a class="user-nav__link" th:href="'/patient/' + ${patient}">ЛИЧНЫЙ КАБИНЕТ</a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="content">
+            <!-- <img class="content__img" src="bg.png" alt=""> -->
+
+            <div class="main__content">
+                <div class="main__content-inner">
+                    <div class="main__text">
+                        <p class="text__content">ВАШЕ ЗДОРОВЬЕ -<br/> НАШ ГЛАВНЫЙ ПРИОРИТЕТ</p>
+                    </div>
+                    <div class="main__btn">
+                        <a class="content__link-first" th:href="'/doctors/' + ${patient} + '/all'">ВРАЧИ</a>
+                        <a class="content__link-second" th:href="'medicalCenter/info/' + ${patient}">КОНТАКТЫ</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+    <script type="text/javascript" th:src="@{/home-page.js}"></script>
+</body>
